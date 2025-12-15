@@ -4,16 +4,22 @@
     box-sizing: border-box;
 }
 
-#experience {
-    position: fixed;
-    width: 100%;
+/* ensure root fills viewport and prevent page scrolling */
+html, body {
     height: 100%;
-    top: 0;
-    left: 0;
     overflow: hidden;
 }
 
+/* pin experience to viewport without rounding issues */
+#experience {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+/* make canvas a block so inline whitespace/line-height won't add extra pixels */
 #canvas {
+    display: block;
     width: 100%;
     height: 100%;
 }
